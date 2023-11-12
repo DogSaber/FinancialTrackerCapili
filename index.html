@@ -1,0 +1,97 @@
+
+
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budget App</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap" rel="stylesheet" />
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+  <div class="wrapper">
+    <div class="container">
+      <div class="sub-container">
+        <!-- Expenditure -->
+        <div class="user-amount-container">
+          <h3>Quick expense detail modifier</h3>
+          <p class="hide error" id="product-title-error">Values cannot be empty</p>
+          <div class="input-container">
+            <label for="product-title">Expense category</label>
+            <input
+              type="text"
+              class="product-title"
+              id="product-title"
+              placeholder="Expense category..."
+            />
+          </div>
+          <div class="input-container">
+            <label for="short-description">Short description</label>
+            <input type="text" id="short-description" placeholder="Short description..." />
+          </div>
+          <div class="input-container">
+            <label for="user-amount">Amount used</label>
+            <input type="number" id="user-amount" placeholder="Amount used..." />
+          </div>
+          <button class="submit" id="check-amount">Set expense details</button>
+          <!-- Expense List -->
+          <div class="list">
+            <h3>Expense List</h3>
+            <div class="list-container" id="expense-list">
+              <!-- Expense list items will be added here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Budget -->
+        <div class="total-amount-container">
+          <h3>Quick income detail modifier</h3>
+          <p class="hide error" id="budget-error">Value cannot be empty or negative</p>
+          <div class="input-container">
+            <label for="total-amount">Amount of income</label>
+            <input type="number" id="total-amount" placeholder="Amount of income..." />
+          </div>
+          <div class="input-container">
+            <label for="source-of-income">Source of income</label>
+            <input type="text" id="source-of-income" placeholder="Source of income..." />
+          </div>
+          <button class="submit" id="total-amount-button">Set income details</button>
+          
+          <!-- New span element -->
+          <div class="flex-space">
+            <span id="total-income-amount">0</span>
+            <span id="total-income-source"></span>
+            <div class="list">
+              <h3>Income List</h3>
+              <div class="list-container" id="income-list"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Output -->
+        <div class="output-container flex-space">
+          <div>
+            <p>Total Budget</p>
+            <span id="amount">0</span>
+          </div>
+          <div>
+            <p>Expenses</p>
+            <span id="expenditure-value">0</span>
+          </div>
+          <div>
+            <p>Balance</p>
+            <span id="balance-amount">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
